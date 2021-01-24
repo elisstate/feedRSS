@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  api:
+    build: ./proiect/server
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    container_name: feed-rss-api
+
+  client:
+    build: ./proiect/client
+    ports:
+      - "80:80"
+    container_name: feed-rss-client
